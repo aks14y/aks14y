@@ -1,14 +1,10 @@
-import { Navbar as NextUiNavbar, Text, useTheme } from "@nextui-org/react";
-import Link from "next/link";
+import { Navbar as NextUiNavbar, Text} from "@nextui-org/react";
 
 export const Navbar = () => {
-  const {isDark} = useTheme();
   return (
-    <NextUiNavbar variant="static" isBordered={isDark} >
+    <NextUiNavbar maxWidth="xl" variant="floating">
       <NextUiNavbar.Brand>
-        <Link href="/">
-          <Text weight="bold" color="primary">Navbar</Text>
-        </Link>
+          <Text h3 weight="bold" color="secondary" css={{margin: 0}}>Akshay A</Text>
       </NextUiNavbar.Brand>
     </NextUiNavbar>
   );
