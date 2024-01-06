@@ -1,15 +1,7 @@
-import Footer from "@/components/Footer";
-import { Navbar } from "@/components/Navbar";
-import Landing from "@/layout/Landing";
+import Home from "@/components/Home";
 
-const Home = () => {
-  return (
-    <div style={{backgroundColor : "#f7fcff"}}>
-      <Navbar/>
-      <Landing/>
-      <Footer/> 
-    </div>
-  );
-}
+const IndexPage = () => {
+  return <Home />;
+};
 
-export default Home;
+export default IndexPage;

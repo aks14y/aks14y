@@ -1,0 +1,47 @@
+.animate {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  &.animateDelay0s {
+    animation-delay: 0s;
+  }
+  &.animateDelay1s {
+    animation-delay: 1s;
+  }
+  &.animateDelay2s {
+    animation-delay: 2s;
+  }
+  &.animateDelay3s {
+    animation-delay: 3s;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(300px);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes flow {
+  0%,
+  100% {
+    transform: translateX(-25%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: translateX(0);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+
+.animateFlow {
+  animation: flow 1s infinite;
+}
+
+.content {
+  animation-name: slideInLeft;
+  animation-timing-function: ease-in;
+}
