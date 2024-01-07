@@ -1,42 +1,21 @@
-"use client";
+import type { AppProps } from "next/app";
 
-import "@/styles/globals.scss";
-import { createTheme, NextUIProvider } from "@nextui-org/react";
+import { NextUIProvider } from "@nextui-org/react";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
+import { fontSans, fontMono, fontRobotoFlex } from "@/config/fonts";
+import { useRouter } from "next/router";
+import "@/styles/globals.css";
 
-const lightTheme = createTheme({
-  type: "light",
-  theme: {
-    colors: {
-      primary: '#0072F5',
-      secondary: '#889096',
-      error: '#FCC5D8',
-    },
-  },
-});
+export default function App({ Component, pageProps }: AppProps) {
+  const router = useRouter();
 
-const darkTheme = createTheme({
-  type: "dark",
-  theme: {
-    colors: {}, // optional
-  },
-});
-
-function MyApp({ Component, pageProps }: any) {
   return (
-    <NextThemesProvider
-      defaultTheme="system"
-      attribute="class"
-      value={{
-        light: lightTheme.className,
-        dark: darkTheme.className,
-      }}
-    >
-      <NextUIProvider>
-        <Component {...pageProps} />
-      </NextUIProvider>
-    </NextThemesProvider>
+    <NextUIProvider navigate={router.push}>
+      <NextThemesProvider>
+        <main className={fontRobotoFlex.className}>
+          <Component {...pageProps} />
+        </main>
+      </NextThemesProvider>
+    </NextUIProvider>
   );
 }
-
-export default MyApp;
