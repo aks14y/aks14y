@@ -13,15 +13,23 @@
   &.animateDelay3s {
     animation-delay: 3s;
   }
+  &.animateDelay4s {
+    animation-delay: 4s;
+  }
+  &.animateDelay5s {
+    animation-delay: 5s;
+  }
 }
 
-@keyframes slideInLeft {
+@keyframes slideInTop {
   from {
-    transform: translateX(300px);
+    transform: translateY(-80px);
+    opacity: 0;
   }
 
   to {
     transform: translateY(0);
+    opacity: 1;
   }
 }
 
@@ -42,6 +50,6 @@
 }
 
 .content {
-  animation-name: slideInLeft;
+  animation-name: slideInTop;
   animation-timing-function: ease-in;
 }

@@ -8,6 +8,7 @@ import { TbWorldWww } from "react-icons/tb";
 import { IoLogoJavascript } from "react-icons/io5";
 import steppingUp from "../assets/stepping_up.svg";
 import Image from "next/image";
+import styles from "../styles/test.module.scss";
 
 const Timeline = () => {
   const TIMELINE_DATA = [
@@ -54,19 +55,21 @@ const Timeline = () => {
         <div className="flex flex-row flex-wrap items-center justify-between">
           <div className="lg:w-2/4">
             <h1 className="text-6xl mb-4 text-secondary">Timeline</h1>
-            {TIMELINE_DATA.map((item, idx) => (
+            {TIMELINE_DATA.map((item, idx) => {
+              let animateClass = `animateDelay${idx}s`;
+              return(
               <div key={idx} className="flex">
                 <div className="relative border-l-2 border-l-slate-500 h-auto pr-8 ">
                   <div className="absolute border-2 border-slate-950 rounded-2xl mb-4 p-3 top-1/2 left-0 -translate-y-1/2 -translate-x-1/2  bg-neutral-400"></div>
                 </div>
-                <div className="bg-slate-900 border-2 border-slate-950 hover:bg-zinc-900 text-neutral-400 rounded-lg p-5 mb-2.5 w-full ">
+                <div className={`bg-slate-900 border-2 border-slate-950 hover:bg-zinc-900 text-neutral-400 rounded-lg p-5 mb-2.5 w-full ${styles.content}  ${styles.animate}  ${styles[animateClass]}`}>
                   <FaIcon isLarge={true} icon={item.icon} />
                   <p className="mt-4">{item.date}</p>
                   <h4 className="mt-3 text-xl">{item.title}</h4>
                   <p className="mt-2">{item.desc}</p>
                 </div>
               </div>
-            ))}
+            )})}
           </div>
           <Image
             src={steppingUp}

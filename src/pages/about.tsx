@@ -29,18 +29,13 @@ const About = () => {
 
   return (
     <DefaultLayout>
-      <div className="p-4 md:p-8">
+      <div className="p-8">
         <div className="container mx-auto flex items-center justify-between md:px-36 md:py-32 gap-16">
           <div className="flex flex-row flex-wrap">
-            <Image
-              src={myAnswers}
-              alt="answers"
-              className="lg:w-2/4 mt-16 lg:mt-0 w-auto"
-            />
             <div className="lg:w-2/4">
               <h1 className="text-6xl mb-16 text-primary">About</h1>
               {ABOUT_ME.map((item, idx) => {
-                let animateClass = `animateDelay0s`;
+                let animateClass = `animateDelay${idx}s`;
                 return (
                   <div
                     key={idx}
@@ -56,6 +51,11 @@ const About = () => {
                 );
               })}
             </div>
+            <Image
+              src={myAnswers}
+              alt="answers"
+              className="lg:w-2/4 mt-16 lg:mt-0 w-auto md:pl-8"
+            />
           </div>
         </div>
       </div>
