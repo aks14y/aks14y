@@ -74,7 +74,7 @@ const Timeline = () => {
           <Image
             src={steppingUp}
             alt="journey"
-            className="lg:w-2/4 mt-16 lg:mt-0 w-auto"
+            className="lg:w-2/4 mt-16 lg:mt-0 w-auto mb-5 lg:mb-0"
           />
         </div>
       </div>
