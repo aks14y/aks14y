@@ -276,69 +276,67 @@ const Home = () => {
         </div>
       </section>
       <section className="p-8">
-        <div className="container mx-auto lg:px-36 pt-16">
-          <div className="py-16 w-full">
-            <h4 className="text-4xl font-medium text-primary leading-tight">
-              Skill Set
-            </h4>
-            <div className="flex flex-wrap">
-              <div className="flex flex-wrap flex-row justify-center lg:justify-between gap-4 lg:w-1/2 mt-5">
-                {SKILL_SET.map((skill, idx) => (
-                  <div
-                    key={idx}
-                    className={`text-secondary shadow-secondary px-32 py-4 flex flex-col items-center w-28 rounded-md ${
-                      skill.selectable
-                        ? "hover:bg-zinc-900 hover:cursor-pointer shadow-md"
-                        : ""
-                    } ${selectedSkill === idx ? "bg-zinc-900" : "bg-purple"} `}
-                    onClick={() => {
-                      if (skill.selectable) setSelectedSkill(idx);
-                    }}
-                  >
-                    <FaIcon
-                      icon={skill.icon}
-                      isLarge={true}
-                      color="text-secondary"
-                    />
-                    <h6>{skill.name}</h6>
-                  </div>
-                ))}
-              </div>
-              <div className="lg:w-1/2 xl:px-8 mt-5 py-1 mx-auto">
-                <>
-                  {SKILL_SET_CONTENT.filter(
-                    (item) => item.idx === selectedSkill
-                  ).map((item, idx) => (
-                    <React.Fragment key={idx}>
-                      <div className="border-2 border-primary p-4 w-60 font-extrabold text-lg text-center">
-                        {item.name}
-                      </div>
-                      <div className="pl-4">
-                        <div className="flex flex-col">
-                          {item.sub.map((item, idx) => (
-                            <React.Fragment key={idx}>
-                              <div className="pl-40 border-l-2 border-dotted h-full border-secondary">
-                                <div className="relative border-2  border-primary after:w-40 after:h-3 p-4 mt-3 after:absolute after:border-b-2 after:border-dotted after:border-secondary after:content-[''] after:top-1/2 after:left-0 after:-translate-y-1/2 after:-translate-x-full">
-                                  <span className="font-bold text-lg">
-                                    {item.name}
-                                  </span>
-                                  <ul className="list-none p-2">
-                                    {item.content.map((item, idx) => (
-                                      <React.Fragment key={idx}>
-                                        <li>{item}</li>
-                                      </React.Fragment>
-                                    ))}
-                                  </ul>
-                                </div>
+        <div className="container mx-auto lg:px-36">
+          <h4 className="text-4xl font-medium text-primary leading-tight">
+            Skill Set
+          </h4>
+          <div className="flex flex-wrap">
+            <div className="flex flex-wrap flex-row justify-center lg:justify-between gap-4 lg:w-1/2 mt-5">
+              {SKILL_SET.map((skill, idx) => (
+                <div
+                  key={idx}
+                  className={`text-secondary shadow-secondary px-32 py-4 flex flex-col items-center w-28 rounded-md ${
+                    skill.selectable
+                      ? "hover:bg-zinc-900 hover:cursor-pointer shadow-md"
+                      : ""
+                  } ${selectedSkill === idx ? "bg-zinc-900" : "bg-purple"} `}
+                  onClick={() => {
+                    if (skill.selectable) setSelectedSkill(idx);
+                  }}
+                >
+                  <FaIcon
+                    icon={skill.icon}
+                    isLarge={true}
+                    color="text-secondary"
+                  />
+                  <h6>{skill.name}</h6>
+                </div>
+              ))}
+            </div>
+            <div className="lg:w-1/2 xl:px-8 mt-5 py-1 mx-auto">
+              <>
+                {SKILL_SET_CONTENT.filter(
+                  (item) => item.idx === selectedSkill
+                ).map((item, idx) => (
+                  <React.Fragment key={idx}>
+                    <div className="border-2 border-primary p-4 w-60 font-extrabold text-lg text-center">
+                      {item.name}
+                    </div>
+                    <div className="pl-4">
+                      <div className="flex flex-col">
+                        {item.sub.map((item, idx) => (
+                          <React.Fragment key={idx}>
+                            <div className="pl-40 border-l-2 border-dotted h-full border-secondary">
+                              <div className="relative border-2  border-primary after:w-40 after:h-3 p-4 mt-3 after:absolute after:border-b-2 after:border-dotted after:border-secondary after:content-[''] after:top-1/2 after:left-0 after:-translate-y-1/2 after:-translate-x-full">
+                                <span className="font-bold text-lg">
+                                  {item.name}
+                                </span>
+                                <ul className="list-none p-2">
+                                  {item.content.map((item, idx) => (
+                                    <React.Fragment key={idx}>
+                                      <li>{item}</li>
+                                    </React.Fragment>
+                                  ))}
+                                </ul>
                               </div>
-                            </React.Fragment>
-                          ))}
-                        </div>
+                            </div>
+                          </React.Fragment>
+                        ))}
                       </div>
-                    </React.Fragment>
-                  ))}
-                </>
-              </div>
+                    </div>
+                  </React.Fragment>
+                ))}
+              </>
             </div>
           </div>
         </div>
