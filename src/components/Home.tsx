@@ -306,37 +306,37 @@ const Home = () => {
               </div>
               <div className="lg:w-1/2 xl:px-8 mt-5 py-1 mx-auto">
                 <>
-                  {SKILL_SET_CONTENT.filter((item, idx) => item.idx === 0).map(
-                    (item, idx) => (
-                      <React.Fragment key={idx}>
-                        <div className="border-2 border-primary p-4 w-60 font-extrabold text-lg text-center">
-                          {item.name}
-                        </div>
-                        <div className="pl-4">
-                          <div className="flex flex-col">
-                            {item.sub.map((item, idx) => (
-                              <React.Fragment key={idx}>
-                                <div className="pl-40 border-l-2 border-dotted h-full border-secondary">
-                                  <div className="relative border-2  border-primary after:w-40 after:h-3 p-4 mt-3 after:absolute after:border-b-2 after:border-dotted after:border-secondary after:content-[''] after:top-1/2 after:left-0 after:-translate-y-1/2 after:-translate-x-full">
-                                    <span className="font-bold text-lg">
-                                      {item.name}
-                                    </span>
-                                    <ul className="list-none p-2">
-                                      {item.content.map((item, idx) => (
-                                        <React.Fragment key={idx}>
-                                          <li>{item}</li>
-                                        </React.Fragment>
-                                      ))}
-                                    </ul>
-                                  </div>
+                  {SKILL_SET_CONTENT.filter(
+                    (item) => item.idx === selectedSkill
+                  ).map((item, idx) => (
+                    <React.Fragment key={idx}>
+                      <div className="border-2 border-primary p-4 w-60 font-extrabold text-lg text-center">
+                        {item.name}
+                      </div>
+                      <div className="pl-4">
+                        <div className="flex flex-col">
+                          {item.sub.map((item, idx) => (
+                            <React.Fragment key={idx}>
+                              <div className="pl-40 border-l-2 border-dotted h-full border-secondary">
+                                <div className="relative border-2  border-primary after:w-40 after:h-3 p-4 mt-3 after:absolute after:border-b-2 after:border-dotted after:border-secondary after:content-[''] after:top-1/2 after:left-0 after:-translate-y-1/2 after:-translate-x-full">
+                                  <span className="font-bold text-lg">
+                                    {item.name}
+                                  </span>
+                                  <ul className="list-none p-2">
+                                    {item.content.map((item, idx) => (
+                                      <React.Fragment key={idx}>
+                                        <li>{item}</li>
+                                      </React.Fragment>
+                                    ))}
+                                  </ul>
                                 </div>
-                              </React.Fragment>
-                            ))}
-                          </div>
+                              </div>
+                            </React.Fragment>
+                          ))}
                         </div>
-                      </React.Fragment>
-                    )
-                  )}
+                      </div>
+                    </React.Fragment>
+                  ))}
                 </>
               </div>
             </div>
