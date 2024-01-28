@@ -18,7 +18,7 @@ module.exports = {
           colors: {
             primary: "#ccf381",
             secondary: "#a3a3a3",
-            purple: "#3f3d56",
+            purple: "#0f172a",
             white: "#ffffff",
             black: "#000000",
           }, // dark theme colors
