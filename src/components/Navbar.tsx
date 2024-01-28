@@ -44,19 +44,23 @@ export const Navbar = () => {
         <NavbarMenuToggle />
       </NavbarContent>
 
-      <NavbarMenu>
+      <NavbarMenu className="bg-primary md:!h-1/2 md:w-1/4 md:ml-auto md:mr-12 p-12">
         {menuItems.map((menu, idx) => (
           <NavbarMenuItem key={idx}>
             <Link
-              className={
-                menu.route === pathname ? "text-primary" : "text-secondary"
-              }
+              className={`font-bold leading-9
+                ${menu.route === pathname ? "text-secondary" : "text-purple"}
+              `}
               href={menu.route}
             >
               {menu.name}
             </Link>
           </NavbarMenuItem>
         ))}
+        <div className="pt-5 font-medium leading-10">
+          <p className="text-secondary">SAY HELLO</p>
+          <Link href="mailto:akshay4362847@gmail.com" className="text-purple">akshay4362847@gmail.com</Link>
+        </div>
       </NavbarMenu>
     </NextUiNavbar>
   );

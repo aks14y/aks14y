@@ -13,7 +13,7 @@ const FaIcon = ({
   const Icon = icon;
   return (
     <Icon
-      className={`ml-2 ${color ? "text-primary" : "text-neural-400"} ${
+      className={`${color ? color : "text-secondary"} ${
         isLarge ? `text-5xl` : `text-xl`
       } `}
     />
