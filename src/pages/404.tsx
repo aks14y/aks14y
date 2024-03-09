@@ -18,6 +18,7 @@ export default function Custom404() {
     } else {
       router.push("/");
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [counter]);
 
   return (
@@ -26,7 +27,7 @@ export default function Custom404() {
         <div className="lg:w-2/4 md:px-36 md:py-32">
           <div className="text-secondary text-center">
             <h4 className="text-xl">
-              Oops! Looks like you're lost. Back Home in {counter}
+              Oops! Looks like you&apos;re lost. Back Home in {counter}
             </h4>
             <Button
               className="mt-4 p-6 text-lg text-black bg-primary"
