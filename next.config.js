@@ -30,7 +30,9 @@ const nextConfig = {
   images : {
     loader: "akamai",
     path: "",
-  }
+  },
+  basePath: "/aks14y",
+  assetPrefix: "/aks14y"
 };
 
 module.exports = nextConfig;
