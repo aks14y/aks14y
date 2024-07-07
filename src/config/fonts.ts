@@ -17,4 +17,5 @@ export const fontMono = FontMono({
 export const fontRobotoFlex = FontRobotoFlex({
   subsets: ["latin"],
   weight: ["100", "400", "700", "900"],
+  preload: true
 });
